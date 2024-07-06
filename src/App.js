@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import profile from './images/profile_pic.JPG'
+import About from './components/About'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <img src={profile} alt="profile-pic" className="profile-pic profile-pic-s profile-pic-m" />
       </div>
     </div>
+    
   );
 }
 

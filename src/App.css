@@ -1,7 +1,8 @@
+
+
 .App {
   text-align: center;
-  background: rgb(18,74,193);
-  background: linear-gradient(0deg, rgba(18,74,193,1) 0%, rgba(0,0,0,1) 57%);
+ 
   min-height: 100vh;
   min-width: 100vh;
   color: white;
@@ -33,6 +34,7 @@
   line-height: 3rem;
   max-width: 600px;
   margin-left: 10rem;
+  animation: fadeInFromTop 1.2s ease-in-out; /* Add animation here */
 }
 
 .header-2 {
@@ -47,14 +49,18 @@
 
 .profile-pic {
   border-radius: 50%;
-  width: 25%; /* Adjust width as needed */
+  width: 22%; /* Adjust width as needed */
   height: auto;
-  margin-right: 8rem;
+  margin-right: 12rem;
+  animation: fadeInFromTop 1.5s ease-in-out; /* Add animation here */
 }
 
 @media only screen and (max-width: 600px)
 /* For Mobile: */
 {
+  .App{
+    min-height:100vh;
+  }
   .main-container {
     flex-direction: row;
   }
@@ -77,10 +83,14 @@
   .profile-pic {
     width: 25%;
     height: auto;
+    margin-left: 2rem;
   }
 }
 
 @media only screen and (max-width: 917px){
+  .App{
+    min-height:100vh;
+  }
   .name{
     word-wrap: break-word;
     line-height: 6rem;
@@ -99,6 +109,9 @@
 @media only screen and (min-width: 601px) and (max-width: 1200px)
 /* For Medium Screens: */
 {
+  .App{
+    min-height:100vh;
+  }
   .main-container {
     flex-direction: row;
   }
@@ -121,5 +134,40 @@
   .profile-pic {
     width: 25%;
     height: auto;
+  }
+}
+
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem); /* Start slightly above the final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the final position */
+  }
+}
+
+@keyframes backgroundColorAnimation {
+  0% {
+    background: rgba(18,74,193,0.7);
+  }
+  50% {
+    background: rgba(0,0,0,0.7);
+  }
+  100% {
+    background: rgba(18,74,193,0.7);
+  }
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-20px) translateY(-20px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
   }
 }
